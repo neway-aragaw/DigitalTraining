@@ -1,0 +1,54 @@
+.video-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 700px; /* Adjust maximum width as needed */
+    margin: 0 auto; /* Center horizontally */
+  }
+  
+  .video-player video {
+    width: 100%; /* Ensure video fills container width */
+    border: 2px solid #eadb08; /* Optional border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .video-player button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none; /* Remove default button border */
+    border-radius: 5px;
+    background-color: rgb(208, 155, 22);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .video-player button:hover {
+    background-color: #222;
+  }
+  
+  /* Media queries for responsive adjustments */
+  @media (max-width: 768px) {
+    .video-player {
+      max-width: 90%; /* Adjust max-width for smaller screens */
+    }
+  }
+ 
+  
+  .video-title {
+    /* Your desired styles for the heading
+       e.g., font-size, color, text-align, margin, etc. */
+    font-size: 2rem;
+    text-align: start;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    margin-bottom: 5px;
+  }
+  .video-player p {
+    line-height: 1.5; /* Adjust as needed (e.g., 1.2 for slightly tighter spacing) */
+    margin-top: 0.5rem; }

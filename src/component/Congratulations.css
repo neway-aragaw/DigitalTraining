@@ -1,0 +1,46 @@
+.congratulations-container {
+    background-color: #0b0404;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .winning-image {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .congratulations-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .congratulations-container p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .congratulations-container {
+      padding: 30px;
+    }
+  
+    .winning-image {
+      width: 280px;
+    }
+  
+    .congratulations-container h1 {
+      font-size: 2em;
+    }
+  
+    .congratulations-container p {
+      font-size: 1em;
+    }
+  }
+  

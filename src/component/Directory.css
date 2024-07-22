@@ -1,0 +1,103 @@
+/* Directory container styles */
+.directory-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #f2f2f2; /* Light Gray background */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure relative positioning for absolute footer */
+  }
+  
+  /* Footer for "Developed by Neway Aragaw" */
+  .directory-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: #666; /* Gray color for footer text */
+  }
+  
+  /* Header styles */
+  .directory-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .directory-header h1 {
+    font-size: 2em;
+    color: #0562c6; /* Blue */
+    font-family: 'Great Vibes', cursive; /* Or any artistic font */
+  }
+  
+  .directory-header p {
+    font-size: 1.2em;
+    color: #555; /* Dark Gray */
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  /* Search container styles */
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .search-dropdown {
+    width: 70%;
+    max-width: 400px;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1.5px solid #0743f7; /* Blue border */
+    font-size: 1em;
+  }
+  
+  button {
+    padding: 8px 16px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF; /* Blue */
+    color: white;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker Blue on hover */
+  }
+  
+  /* Locations styles */
+  .locations {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e0e0e0; /* Light Gray */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .locations p {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333; /* Dark Gray */
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .locations img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  /* Directory container styles */
+
+
+/* Footer styles */

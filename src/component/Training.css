@@ -1,0 +1,108 @@
+Training.css
+
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(to right, #e0f4f8, #eff4f5,rgba(191, 222, 228, 0.584));
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .training {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 70px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .training h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #f39c12;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .training a {
+    text-decoration: none;
+    background: #f39c12;
+    color: #fff;
+  
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background 0.3s ease;
+  }
+  
+  .training a:hover {
+    background: #e67e22;
+  }
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  h1, h2 {
+    color: #343a40;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  button:hover {
+    background-color: #dce4ec;
+  }
+  
+ 
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: rgb(253, 165, 3);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+  

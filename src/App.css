@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
+body{
+    background-color: rgb(6, 21, 44);
+    color: black;
+    
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.training_header .start-training{
+    background-color: rgb(6, 21, 44);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* .training h1{
+    color: silver;
+} */
+.training {
+   
+    /* color: hsl(0, 62%, 4%);  */
+    background-color: rgba(153, 238, 237, 0.932); 
+    
   }
-}
+  /* .training_header button{
+    width: 100px;
+  } */
+ .training-home  h1{
+    color: aliceblue;
+   }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+   .training-home .button-group button {
+    background-color:rgb(253, 165, 3); /* Button background color */
+    color: black; /* Button text color */
+    border: 1px solid #ddd; /* Button border */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Set button font size */
+    margin: 5px; /* Add spacing between buttons */
   }
-  to {
-    transform: rotate(360deg);
+  .button-group button:hover{
+    background-color: blue;
+    color: #ddd;
   }
-}
+  .training {
+   
+    color: #fff;
+   
+    background-color: rgb(6, 21, 44); /* Light blue background */
+    font-family: sans-serif;
+  }
+  
+  .training h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: white; /* Dark text */
+  }
+  
+  .training_header {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .training_header a {
+    text-decoration: none;
+    color: #fff;
+    background-color: golden; /* Blue button */
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .training_header a:hover {
+    background-color: #03a8ef; /* Darker blue on hover */
+  }
+  .training-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color:rgb(6, 21, 44); /* Light blue background */
+    font-family:'Times New Roman', Times, serif;
+  }
+  
+  .training-home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #333; /* Dark text */
+  }
+  
+  .button-group button{
+    background-color: gold;
+  }
+  
+  .button-item {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .button-item p {
+    margin-bottom: 5px;
+  }
+  
+  .button-item button {
+    background-color: gold;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .training-home p{
+    color: #ddd;
+    font-size: 1.2rem;
+  }
+  .button-item a button {
+    background-color: gold; 
+  }
+  .create_container{
+    
+      width: 100%;
+      max-width: 400px; /* Example width */
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+
+  }
+.video-player p{
+  color: #f3ecec;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    padding-bottom: 30px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+.quick-directory a{
+  color: #000;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+ background-color: #ddd;}
