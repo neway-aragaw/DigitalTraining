@@ -21,7 +21,7 @@ function TrainingHome({ userName }) {
         </div>
         <div className="button-item">
           <p>2) Working from the Gate</p>
-          <Link to="/working-gate"><button>Start</button></Link>
+          <Link to="/gates"><button>Start</button></Link>
         </div>
         <div className="button-item">
           <p>3) Working from the Lobby</p>
