@@ -15,13 +15,26 @@ function TabletX({ userName }) {
     height: '390',
     width: '640',
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   };
 
-  const handlePlayPause = () => {
-    setIsPlaying(!isPlaying); // Update state directly here
+  const handlePlayPause = (event) => {
+    const player = event.target;
+    setIsPlaying(!isPlaying);
+    if (!isPlaying) {
+      // Request fullscreen when the video starts to play
+      const iframe = player.getIframe();
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { // Firefox
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { // IE/Edge
+        iframe.msRequestFullscreen();
+      }
+    }
   };
 
   const handleVideoEnd = () => {
@@ -45,8 +58,12 @@ function TabletX({ userName }) {
         <FontAwesomeIcon icon={faCheck} className="icon" /> Assessment included <br />
         <i>(Please click play button when you get ready)</i>
       </p>
-      <YouTube videoId="VJwrZsiYzVE" opts={opts} onEnd={handleVideoEnd} /> {/* Use onEnd for video completion */}
-
+      <YouTube
+        videoId="VJwrZsiYzVE"
+        opts={opts}
+        onReady={handlePlayPause}
+        onEnd={handleVideoEnd}
+      />
     </div>
   );
 }
