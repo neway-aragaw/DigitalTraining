@@ -7,18 +7,19 @@ import { faClock, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const questions = [
   {
-    question: 'At the security checkpoint, how should you handle the badge scanning process?',
+    question: 'At the gate for a connecting flight, how should you assist a wheelchair passenger?',
     options: [
-      'A) Hand your badge to the security personnel and let them scan it.',
-      'B) Scan your badge yourself when the security officer is ready, and show your badge.',
-      'C) Show your badge but do not worry about scanning it.',
-      'D) Only show your badge if requested.',
+      'A) Direct them to their gate and leave them alone.',
+      'B) Assist them  and make sure they are comfortably seated.',
+      'C) Only help if they ask for assistance.',
+      'D) Let them find their way without any help.',
     ],
     answer: 1, // Index of the correct answer
   },
 ];
 
-function MultipleChoiceTest({ userName }) {
+
+function MultipleGates({ userName }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isCorrect, setIsCorrect] = useState(false); // State to track correct answer
@@ -118,4 +119,4 @@ function MultipleChoiceTest({ userName }) {
   );
 }
 
-export default MultipleChoiceTest;
+export default MultipleGates;

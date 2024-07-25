@@ -16,6 +16,8 @@ import Header from './component/Header';
 import Directory from './component/Directory.js';
 import TabletX from './component/ExTablet.js';
 import Gates from './component/gates/Gate.js';
+import MultipleGates from './component/Mulitple_gates.js';
+import About from './component/About.js';
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -24,6 +26,8 @@ function App() {
       
       <Routes>
       <Route path="/create-user" element={<CreateUser setUserName={setUserName} />} />
+      <Route path="/M-C-G" element={<MultipleGates setUserName={setUserName} />} />
+      <Route path="/about" element={<About setUserName={setUserName} />} />
       <Route path="/gates" element={<Gates setUserName={setUserName} />} />
       <Route path="/training-home" element={<TrainingHome userName={userName} />} />
         <Route exact path="/" element={<Training />} />

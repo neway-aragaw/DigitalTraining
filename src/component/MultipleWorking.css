@@ -146,4 +146,9 @@ body, html {
     text-decoration: underline;
     color: gold; /* Or any other desired color */
   }
-  
+  /* MultipleWorking.css */
+
+.question-text {
+  font-size: 22px;
+  margin-bottom: 10px; /* Optional: adds space below the question text */
+}

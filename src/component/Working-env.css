@@ -52,3 +52,85 @@
   .video-player p {
     line-height: 1.5; /* Adjust as needed (e.g., 1.2 for slightly tighter spacing) */
     margin-top: 0.5rem; }
+
+
+    /* Container for the entire video player section */
+.video-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  height: 570px;
+  background-color: rgba(11, 149, 195, 0.826);  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Container for the user icon and username */
+.user-icon-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Styling for the user icon */
+.user-icon {
+  font-size: 24px;
+  color: #007bff; /* Blue color for icon */
+  margin-right: 10px;
+}
+
+/* Styling for the username */
+.user-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333; /* Darker text color */
+}
+
+/* Styling for the video title */
+.video-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: #222; /* Dark color for title */
+}
+
+/* Styling for the summary section */
+.video-player p {
+  font-size: 16px;
+  text-align: center;
+  color: #555; /* Medium gray text color */
+  margin: 10px 0;
+}
+
+/* Styling for the icons in the summary section */
+.icon {
+  color: #007bff; /* Blue color for icons */
+  margin-right: 5px;
+}
+
+/* Styling for the video element */
+video {
+  border-radius: 8px; /* Rounded corners for video */
+  border: 2px solid #ddd; /* Light gray border around video */
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 768px) {
+  .video-player {
+    padding: 15px;
+  }
+
+  .video-title {
+    font-size: 18px;
+  }
+
+  .user-name {
+    font-size: 16px;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+  }
+}

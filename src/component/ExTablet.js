@@ -9,6 +9,7 @@ import { faClock, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 function TabletX({ userName }) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showThumbnail, setShowThumbnail] = useState(true); // State to handle thumbnail visibility
   const navigate = useNavigate();
 
   const opts = {
@@ -41,6 +42,10 @@ function TabletX({ userName }) {
     navigate('/multiple-choice'); // Navigate to the multiple choice page
   };
 
+  const handleThumbnailClick = () => {
+    setShowThumbnail(false); // Hide thumbnail when video starts
+  };
+
   return (
     <div className="video-player">
       <div className="user-icon-container">
@@ -56,14 +61,28 @@ function TabletX({ userName }) {
         Summary <br />
         <FontAwesomeIcon icon={faClock} className="icon" /> Video length: 3 minutes<br />
         <FontAwesomeIcon icon={faCheck} className="icon" /> Assessment included <br />
-        <i>(Please click play button when you get ready)</i>
+        <i>(Please click the play button when you get ready)</i>
       </p>
-      <YouTube
-        videoId="VJwrZsiYzVE"
-        opts={opts}
-        onReady={handlePlayPause}
-        onEnd={handleVideoEnd}
-      />
+      
+      {showThumbnail && (
+        <div className="thumbnail-container" onClick={handleThumbnailClick}>
+          <img
+            src={require('./assets/tumbnail.jpg')} // Path to your local thumbnail
+            alt="Video Thumbnail"
+            className="thumbnail"
+          />
+          <div className="play-button">▶</div>
+        </div>
+      )}
+      
+      {!showThumbnail && (
+        <YouTube
+          videoId="VJwrZsiYzVE"
+          opts={opts}
+          onReady={handlePlayPause}
+          onEnd={handleVideoEnd}
+        />
+      )}
     </div>
   );
 }

@@ -66,9 +66,9 @@ function Directory() {
     'longTermA': 'Doors 2, 8, 15, and 17',
     'longTermB': 'Doors 2, 8, 15, and 17',
     'amtrakMARC': 'Doors 2, 8, 15, and 17',
-    'taxi': 'Doors 5 and #',
-    'uber': 'Doors 6, 8, and 12',
-    'lyft': 'Doors 6, 8, and 12'
+    'taxi': 'Doors 5 and 13',
+    'uber': 'Upper level Doors 6, 8, and 12',
+    'lyft': 'Upper levelDoors 6, 8, and 12'
   };
 
   return (
@@ -77,10 +77,7 @@ function Directory() {
         <h1>Welcome New Trainees!</h1>
         <p>This directory is designed to help you navigate the airport and find key resources during your training.</p>
       </header>
-<br />
-<br />
-<br />
-<br />
+
 <br />
       <section className="search-container">
         <select className="search-dropdown" value={selectedCategory} onChange={handleCategoryChange}>

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../Working-env.css'; // Assuming the CSS file exists
+import '../Working-env.css'; // Ensure this CSS file exists and has correct styles
 import { faUser, faClock, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import tumbnail_gate from '../../component/assets/tumb-gates.jpg'; // Correct relative path
 
-function Gates({ userName }) {
+function WorkingEnvironment({ userName }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const navigate = useNavigate();
 
   const handleVideoEnd = () => {
-    navigate('/multiple-choice'); // Navigate to the multiple choice page
+    navigate('/M-C-G'); // Navigate to the multiple choice page
   };
 
   return (
@@ -21,19 +22,20 @@ function Gates({ userName }) {
         </span>
       </div>
       <p className="video-title">
-        Video 1<br />(Understanding the Work Environment)
+        Video 1<br />(Working at the gate)
       </p>
-      <p>
+      <p className="video-summary">
         Summary <br />
-        <FontAwesomeIcon icon={faClock} className="icon" /> Video length: 3 minutes<br />
+        <FontAwesomeIcon icon={faClock} className="icon" /> Video length: 4 minute<br />
         <FontAwesomeIcon icon={faCheck} className="icon" /> Assessment included <br />
-        <i>(Please click play button when you get ready)</i>
+        <i>(Please click the play button when you are ready)</i>
       </p>
       <video
         width="640"
         height="390"
         controls
         onEnded={handleVideoEnd}
+        poster={tumbnail_gate}  // Use the imported thumbnail
       >
         <source src="https://d12ju51ift25w7.cloudfront.net/gates_final2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -42,4 +44,4 @@ function Gates({ userName }) {
   );
 }
 
-export default Gates;
+export default WorkingEnvironment;

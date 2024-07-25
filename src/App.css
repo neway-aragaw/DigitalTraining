@@ -180,3 +180,152 @@ body{
 .icon {
   margin-right: 5px;
 }
+.training-home {
+  /* Existing styles */
+}
+
+.user-icon-container {
+  /* Existing styles */
+}
+
+.user-icon {
+  /* Existing styles */
+}
+
+.user-name {
+  /* Existing styles */
+}
+
+.to-middle {
+  background-color: rgba(11, 149, 195, 0.826);
+  width: 300px;
+  height: 450px;
+  color: #000;
+  margin: 0 auto; /* Centers the div horizontally */
+  padding: 20px; /* Adds padding for better spacing inside the div */
+  border-radius: 8px; /* Optional: adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+
+.button-group {
+  /* Existing styles */
+}
+
+.button-item {
+  
+}
+.training-home {
+  /* Existing styles */
+}
+
+.training-home {
+  /* Existing styles */
+}
+
+.user-icon-container {
+  /* Existing styles */
+}
+
+.user-icon {
+  /* Existing styles */
+}
+
+.user-name {
+  /* Existing styles */
+}
+
+.to-middle {
+
+  width: 350px;
+  height: 560px;
+  margin: 0 auto; /* Centers the div horizontally */
+  padding: 20px; /* Adds padding for better spacing inside the div */
+  border-radius: 8px; /* Adds rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.2); /* Shadow with red tint */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns items to the start (left) */
+  justify-content: center; /* Centers content vertically */
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns buttons to the start (left) */
+  gap: 10px; /* Adds spacing between buttons */
+  width: 100%; /* Ensures button group takes up full width of the container */
+}
+
+.button-item {
+  display: flex;
+  align-items: center; /* Aligns content vertically within the button-item */
+}
+
+.button-item p {
+  margin: 20;
+  padding-right: 30px; /* Adds spacing between text and button */
+}
+
+.to-middle button {
+  width: 150px;
+  height: 60px;
+
+}
+/* Existing styles */
+
+.to-middle button {
+  width: 150px;
+  height: 40px;
+ 
+  border: none; /* Removes default border */
+  border-radius: 5px; /* Adds rounded corners */
+  color: #333; /* Text color */
+  font-size: 16px; /* Adjust font size */
+  cursor: pointer; /* Shows a pointer cursor on hover */
+  transition: background 0.3s ease; /* Smooth background transition on hover */
+}
+
+.to-middle button:hover {
+  background: linear-gradient(
+    to right,
+    rgba(207, 207, 28, 0.9), /* Slightly darker light yellow on hover */
+    rgba(255, 200, 0, 0.9) /* Slightly darker gold on hover */
+  );
+}
+
+
+/* Additional styles for aligning text and buttons */
+.button-group > div {
+  width: calc(100% - 20px); /* Adjusts width to ensure 10px padding from each side */
+  padding-left: 10px; /* Ensures text and button are 10px away from the left edge */
+}
+
+.video-player {
+  /* Existing styles */
+}
+
+
+.thumbnail-container {
+  position: relative;
+  width: calc(540px - 10px); /* Subtract 10px to account for 5px margin on each side */
+  height: calc(390px - 10px); /* Subtract 10px to account for 5px margin on each side */
+  margin: 5px; /* Margin around the container */
+  cursor: pointer;
+}
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 10px;
+}

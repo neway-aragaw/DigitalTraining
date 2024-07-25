@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Working-env.css'; // Assuming the CSS file exists
 import { faUser, faClock, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import tumbnail from './assets/tumbnail.jpg'; // Correct relative path
 
 function WorkingEnvironment({ userName }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -21,11 +22,11 @@ function WorkingEnvironment({ userName }) {
         </span>
       </div>
       <p className="video-title">
-        Video 1<br />(Understanding the Work Environment)
+        Video 1<br />(Understanding the Security Checkpoint)
       </p>
       <p>
         Summary <br />
-        <FontAwesomeIcon icon={faClock} className="icon" /> Video length: 3 minutes<br />
+        <FontAwesomeIcon icon={faClock} className="icon" /> Video length: 1 minutes<br />
         <FontAwesomeIcon icon={faCheck} className="icon" /> Assessment included <br />
         <i>(Please click play button when you get ready)</i>
       </p>
@@ -34,9 +35,12 @@ function WorkingEnvironment({ userName }) {
         height="390"
         controls
         onEnded={handleVideoEnd}
+        poster={tumbnail}  // Use the imported thumbnail
       >
-        <source src="https://d1pas30aojg41u.cloudfront.net/video_2024-07-24_01-39-12.mp4" type="video/mp4" />
+        <source src="https://d6mf3z9i340i9.cloudfront.net/secirity_video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
+        {/*         <source src="https://d12ju51ift25w7.cloudfront.net/gates_final2.mp4" type="video/mp4" />
+ */}
       </video>
     </div>
   );
