@@ -28,7 +28,7 @@ function TrainingHome() {
   const handleExitTraining = () => {
     localStorage.removeItem('username');
     localStorage.removeItem('password'); // Remove password on sign out
-    navigate('/signin'); // Redirect to sign-in page after logging out
+    navigate('/'); // Redirect to sign-in page after logging out
   };
 
   return (

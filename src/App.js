@@ -20,9 +20,6 @@ import MultipleGates from './component/Mulitple_gates.js';
 import About from './component/About.js';
 import TrainingChecklist from './component/Trainers/TrainingChecklist.js';
 import TrainerChecklist from './component/Trainers/TrainingChecklist.js';
-import Home from './component/sign/Home.js';
-import SignUp from './component/sign/SignUp.js';
-import SignIn from './component/sign/SignIn.js';
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -30,10 +27,9 @@ function App() {
     <div >
       
       <Routes>
-      <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
-      <Route path="/create-user" element={<CreateUser setUserName={setUserName} />} />
+  
+    
+      <Route path="//create-user" element={<CreateUser setUserName={setUserName} />} />
       <Route path="/M-C-G" element={<MultipleGates setUserName={setUserName} />} />
       <Route path="/trainers" element={     <TrainerChecklist trainerName="John Doe" />} />
       <Route path="/about" element={<About setUserName={setUserName} />} />
@@ -44,7 +40,7 @@ function App() {
         <Route path="/multiple-choice" element={<MultipleChoiceTest userName={userName} />} />
         <Route path="/video2" element={<LobbyT />} />
         <Route path="/understanding-tablet" element={<TabletX />} />
-        <Route path="/create-user" element={<CreateUser />} />
+        {/* <Route path="/create-user" element={<CreateUser />} /> */}
         <Route path="/tablet" element={<Tablet />} />
         <Route path="/M-C-L" element={<MultipleChoiceLobby />} />
         <Route path="/M-C-T" element={<MCT />} />

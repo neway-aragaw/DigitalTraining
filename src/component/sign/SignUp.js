@@ -9,21 +9,22 @@ function SignUp() {
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    
+
     const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
-    
+
     // Check if username already exists
     const userExists = existingUsers.some(user => user.username === username);
 
     if (userExists) {
       setMessage('An account already exists with this username. Please choose another.');
-    } else if (username && password) {
+    } else if (!username || !password) {
+      setMessage('Please enter both username and password.');
+    } else {
       // Add new user
       existingUsers.push({ username, password });
       localStorage.setItem('users', JSON.stringify(existingUsers));
-      navigate('/training-home'); // Redirect to the training-home page
-    } else {
-      setMessage('Please enter both username and password.');
+      localStorage.setItem('loggedInUser', username); // Store logged-in user
+      navigate('/training-home'); // Replace with your actual training home route
     }
   };
 

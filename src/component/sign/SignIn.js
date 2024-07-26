@@ -16,9 +16,10 @@ function SignIn() {
     const user = existingUsers.find(user => user.username === username && user.password === password);
 
     if (user) {
+      localStorage.setItem('loggedInUser', username); // Store logged-in user
       navigate('/training-home'); // Redirect to the training-home page
     } else {
-      setMessage('Invalid username or password. Please try again.');
+      setMessage('Invalid username or password.');
     }
   };
 

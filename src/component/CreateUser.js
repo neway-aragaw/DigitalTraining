@@ -5,7 +5,7 @@ import './CreateUserAccount.css';
 function CreateUser({ setUserName }) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [errorMessage, setErrorMessage] = useState(''); // Added state for error message
+  const [errorMessage, setErrorMessage] = useState(''); // State for error message
   const navigate = useNavigate();
 
   const handleFirstNameChange = (event) => {
@@ -18,33 +18,41 @@ function CreateUser({ setUserName }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
+
     if (firstName.trim() === '' || lastName.trim() === '') {
       setErrorMessage('Both first name and last name are required.');
-      return; // Stop the form from submitting if validation fails
+      return;
     }
 
     const createdUsername = `${firstName} ${lastName}`;
     setUserName(createdUsername);
-    navigate('/training-home');
+    navigate('/training-home'); // Redirect to /training-home
   };
 
   return (
-    <div className="create_container">
+    <div className="create-container">
       <h2>Create User Account</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="First Name"
-          value={firstName}
-          onChange={handleFirstNameChange}
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          value={lastName}
-          onChange={handleLastNameChange}
-        />
+        <div className="input-group">
+          <label htmlFor="firstName">First Name</label>
+          <input
+            id="firstName"
+            type="text"
+            placeholder="First Name"
+            value={firstName}
+            onChange={handleFirstNameChange}
+          />
+        </div>
+        <div className="input-group">
+          <label htmlFor="lastName">Last Name</label>
+          <input
+            id="lastName"
+            type="text"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={handleLastNameChange}
+          />
+        </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Display error message */}
         <button type="submit">Create Account</button>
       </form>
