@@ -7,15 +7,7 @@
     background-color: #f4f4f4;
     font-family: Arial, sans-serif;
 }
-body {
-   
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align items to the top */
-  
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
-}
+
 
 .container {
     width: 100%;
