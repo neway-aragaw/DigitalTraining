@@ -21,11 +21,12 @@ function Training() {
           <li><Link to="/directory">Quick Directory</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/trainers">For Trainers</Link></li> {/* New list item */}
         </ul>
       </div>
       <h2>Interactive PSA Training</h2>
       <div className="training_header">
-        <Link to="/create-user">Start</Link>
+        <Link to="/signup">Start</Link>
       </div>
     </div>
   );

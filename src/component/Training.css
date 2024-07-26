@@ -219,15 +219,17 @@ h2 {
 
 .menu a {
   display: block;
-  padding: 10px 20px;
+  padding: 9px 20px;
+  font-size: medium;
   text-decoration: underline;
   text-underline-offset: 6px;
   text-align: center;
   color: #faf9f9; /* Text color */
-  background-color: rgb(6, 21, 44); /* Background color of menu items */
+  background-color: rgba(36, 36, 36, 0.42); /* Background color of menu items */
   border-bottom: 1px solid rgb(6, 21, 44); /* Border between items */
 }
 
 .menu a:hover {
   background: #004080; /* Slightly lighter background color on hover */
 }
+

@@ -133,4 +133,13 @@ body {
     font-weight: bold;
   }
   
-  
+  .button-group {
+  display: flex;
+  flex-direction: column; /* Ensure buttons are stacked vertically */
+}
+
+
+
+.button-item p {
+  margin: 0; /* Remove default margin from <p> to reduce space */
+}
