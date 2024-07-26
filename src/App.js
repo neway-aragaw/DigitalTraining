@@ -27,6 +27,7 @@ import TrainerChecklist from './component/Trainers/TrainingChecklist.js';
 import User from './component/User.js';
 import Tablet2 from './component/ExTablet2.js';
 import ExTabletFinal from './component/ExTbaletFinal.js';
+import ContactPage from './component/Contact.js';
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -43,6 +44,7 @@ function App() {
       <Route path="/gates" element={<Gates setUserName={setUserName} />} />
       <Route path="/training-home" element={<TrainingHome userName={userName} />} />
         <Route exact path="/" element={<Training />} />
+        <Route exact path="/contact" element={<ContactPage />} />
         <Route path="/working-environment" element={<WorkingEnvironment userName={userName} />} />
         <Route path="/multiple-choice" element={<MultipleChoiceTest userName={userName} />} />
         <Route path="/working-lobby" element={<LobbyT />} />

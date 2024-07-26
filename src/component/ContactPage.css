@@ -1,0 +1,48 @@
+.tes{
+   
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+body {
+   
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+  
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+
+    padding: 20px;
+    margin-top: 20px; /* Add margin-top to create space from the top of the page */
+}
+
+.contact-info {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center; /* Center text inside the contact-info div */
+}
+
+h1 {
+    color: #333;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info p span {
+    font-weight: normal; /* Default font weight */
+}
+
+.contact-info p .bold-span {
+    font-weight: bold; /* Make the first span bolder */
+}
