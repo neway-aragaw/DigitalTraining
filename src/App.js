@@ -20,6 +20,7 @@ import MultipleGates from './component/Mulitple_gates.js';
 import About from './component/About.js';
 import TrainingChecklist from './component/Trainers/TrainingChecklist.js';
 import TrainerChecklist from './component/Trainers/TrainingChecklist.js';
+import User from './component/User.js';
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -29,7 +30,7 @@ function App() {
       <Routes>
   
     
-      <Route path="//create-user" element={<CreateUser setUserName={setUserName} />} />
+   
       <Route path="/M-C-G" element={<MultipleGates setUserName={setUserName} />} />
       <Route path="/trainers" element={     <TrainerChecklist trainerName="John Doe" />} />
       <Route path="/about" element={<About setUserName={setUserName} />} />
@@ -40,12 +41,14 @@ function App() {
         <Route path="/multiple-choice" element={<MultipleChoiceTest userName={userName} />} />
         <Route path="/video2" element={<LobbyT />} />
         <Route path="/understanding-tablet" element={<TabletX />} />
-        {/* <Route path="/create-user" element={<CreateUser />} /> */}
+        <Route path="/user" element={<User setUserName={setUserName} />} />
+   
         <Route path="/tablet" element={<Tablet />} />
         <Route path="/M-C-L" element={<MultipleChoiceLobby />} />
         <Route path="/M-C-T" element={<MCT />} />
         <Route path="/directory" element={<Directory />} />
         <Route path="/congra" element={<Congratulations />} />
+        <Route path="/create-user" element={<CreateUser setUserName={setUserName} />} />
       </Routes>
       </div>
   );

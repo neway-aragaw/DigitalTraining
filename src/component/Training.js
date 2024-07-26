@@ -26,7 +26,7 @@ function Training() {
       </div>
       <h2>Interactive PSA Training</h2>
       <div className="training_header">
-        <Link to="/create-user">Start</Link>
+        <Link to="/user">Start</Link>
       </div>
     </div>
   );

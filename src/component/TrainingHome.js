@@ -14,7 +14,8 @@ function TrainingHome() {
     if (storedUsername) {
       setUsername(storedUsername);
     } else {
-      navigate('/signin'); // Redirect to sign-in if no username is stored
+      // You can decide what to do if no username is stored, e.g., redirect to home
+      // navigate('/'); // Uncomment if you want to redirect to home page
     }
   }, [navigate]);
 
@@ -28,14 +29,15 @@ function TrainingHome() {
   const handleExitTraining = () => {
     localStorage.removeItem('username');
     localStorage.removeItem('password'); // Remove password on sign out
-    navigate('/'); // Redirect to sign-in page after logging out
+    navigate('/'); // Redirect to home page after logging out
   };
 
   return (
     <div className="training-home to-middle">
-      <div className="user-icon-container">
+  <div className="user-icon-container">
         <FontAwesomeIcon icon={faUser} className="user-icon" />
         <span className="user-name"><u>{username ? username : "PSA-User"}</u></span>
+        <br />
       </div>
 
       <h2>Welcome, {username}!</h2>
@@ -66,11 +68,10 @@ function TrainingHome() {
             <button onClick={handleButtonClick}>Start</button>
           </Link>
         </div>
-        <div className="button-item">
-          <p>Exit Training</p>
-          <button onClick={handleExitTraining}>Exit</button>
-        </div>
+
+
       </div>
+     
     </div>
   );
 }

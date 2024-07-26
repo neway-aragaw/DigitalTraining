@@ -144,3 +144,35 @@ body {
 .button-item p {
   margin: 0; /* Remove default margin from <p> to reduce space */
 }
+.button-item {
+  margin: 10px 0;
+}
+
+/* TrainingHome.css */
+
+.button-item {
+  margin: 10px 0;
+}
+
+.red {
+  background: linear-gradient(135deg, #ff4d4d, #ff0000); /* Gradient background */
+  color: white; /* White text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Add padding */
+  font-size: 16px; /* Adjust font size */
+  cursor: pointer; /* Show pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  text-transform: uppercase; /* Uppercase text */
+}
+
+.red:hover {
+  background: linear-gradient(135deg, #e60000, #cc0000); /* Darker gradient on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.red:focus {
+  outline: none; /* Remove default focus outline */
+}
