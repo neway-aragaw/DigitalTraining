@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Working-env.css'; // Import your CSS file
 
-const video = "https://dkcqllqa78ii.cloudfront.net/part+1.mp4"; // URL for the video
+// Array with only the video you want to play
+const videos = [
+  "https://d2vfkfmtobdw95.cloudfront.net/part2.mp4", // Updated video URL
+];
 
 function Tablet2({ userName }) {
   const [isVideoEnded, setIsVideoEnded] = useState(false);
@@ -13,7 +16,8 @@ function Tablet2({ userName }) {
   };
 
   const handleNext = () => {
-    navigate('/understanding-tablet/understanding-tablet2'); // Redirect to the new page
+    // Navigate to the '/final' page when the video ends and 'Next' is clicked
+    navigate('/final');
   };
 
   return (
@@ -23,7 +27,7 @@ function Tablet2({ userName }) {
       </div>
       <p className="video-title">
         Understanding AvTech Tablet<br />
-        Video 1
+        Video 2
       </p>
       <video
         width="640"
@@ -33,7 +37,7 @@ function Tablet2({ userName }) {
         onEnded={handleVideoEnd}
         poster="./assets/communicate.jpg" // Placeholder thumbnail
       >
-        <source src={video} type="video/mp4" />
+        <source src={videos[0]} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       {isVideoEnded && (

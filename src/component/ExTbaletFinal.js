@@ -1,19 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Working-env.css'; // Import your CSS file
 
-const video = "https://dkcqllqa78ii.cloudfront.net/part+1.mp4"; // URL for the video
+const videoUrl = "https://d2vfkfmtobdw95.cloudfront.net/0721.mp4";
 
-function Tablet2({ userName }) {
-  const [isVideoEnded, setIsVideoEnded] = useState(false);
+function ExTabletFinal({ userName }) {
   const navigate = useNavigate();
 
   const handleVideoEnd = () => {
-    setIsVideoEnded(true);
-  };
-
-  const handleNext = () => {
-    navigate('/understanding-tablet/understanding-tablet2'); // Redirect to the new page
+    navigate('/M-C-T'); // Navigate to the Multiple Choice Test page when the video ends
   };
 
   return (
@@ -22,8 +17,8 @@ function Tablet2({ userName }) {
         <span className="user-name"><u>{userName ? userName : 'PSA-User'}</u></span>
       </div>
       <p className="video-title">
-        Understanding AvTech Tablet<br />
-        Video 1
+        Final Video<br />
+        (Overview and Conclusion)
       </p>
       <video
         width="640"
@@ -33,18 +28,11 @@ function Tablet2({ userName }) {
         onEnded={handleVideoEnd}
         poster="./assets/communicate.jpg" // Placeholder thumbnail
       >
-        <source src={video} type="video/mp4" />
+        <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      {isVideoEnded && (
-        <div className="button-container">
-          <button onClick={handleNext} className="next-button">
-            Next
-          </button>
-        </div>
-      )}
     </div>
   );
 }
 
-export default Tablet2;
+export default ExTabletFinal;

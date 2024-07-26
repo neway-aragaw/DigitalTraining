@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import for navigation
 import "./MultipleWorking.css";
-
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const questions = [
   {
-    question: 'The passanger does not need to be checked on security',
-    options: ['A) True', 'B) False'],
+    question: 'If a passenger with a wheelchair has changed their baggage claim location, what should you do?',
+    options: [
+      'A) Ignore the change and assist them at the original location',
+      'B) Direct them to the new baggage claim location and assist them there',
+      'C) Inform them that you cannot help if the location has changed'
+    ],
     answer: 1, // Index of the correct answer
   },
 ];
@@ -35,11 +38,11 @@ function MultipleChoiceLobby({ userName }) {
 
       if (isAnswerCorrect) {
         setTimeout(() => {
-          navigate('/tablet'); // Navigate to video2 page after a delay
+          navigate('/Training-home'); // Navigate to the next page after a delay
         }, 3000); // Delay in milliseconds (3 seconds)
       } else {
-        alert("Incorrect answer")
-        navigate('/video2'); // Navigate to working-environment page on incorrect answer
+        alert("Incorrect answer");
+        navigate('/video2'); // Navigate to the video page on incorrect answer
       }
       setSelectedAnswer(null); // Reset for the next question
     } else {
@@ -67,7 +70,7 @@ function MultipleChoiceLobby({ userName }) {
           <span className="user-name"><u>{userName ? userName : "PSA-User"}</u></span>
         </div>
         <div className="content-wrapper">
-          <h2>Assessment Question(<i>section 2</i>)</h2>
+          <h2>Assessment Question (<i>Section 2</i>)</h2>
           <p>{question.question}</p>
           <ul>
             {question.options.map((option, index) => (
@@ -77,24 +80,24 @@ function MultipleChoiceLobby({ userName }) {
             ))}
           </ul>
 
-          <button type="submit" onClick={handleSubmit}>
+          <button type="submit" onClick={handleSubmit} className="submit-button">
             Submit Answer
           </button>    
           
           {hasSubmitted && ( // Only show feedback message after an answer is submitted
             isCorrect ? (
               <h2>
-                correct &nbsp;&nbsp;
+                Correct &nbsp;&nbsp;
                 <FontAwesomeIcon icon={faCheck} style={{ color: 'green' }} />
               </h2>
             ) : (
               <>
                 <h2>
-                  incorrect &nbsp;&nbsp;
+                  Incorrect &nbsp;&nbsp;
                   <FontAwesomeIcon icon={faTimes} style={{ color: 'red' }} />
                 </h2>
                 {currentQuestion < questions.length - 1 && (
-                  <button type="button" onClick={handleNextQuestion}>
+                  <button type="button" onClick={handleNextQuestion} className="next-button">
                     Next Question
                   </button>
                 )}
@@ -115,11 +118,3 @@ function MultipleChoiceLobby({ userName }) {
 }
 
 export default MultipleChoiceLobby;
-
-// const questions = [
-//   {
-//     question: 'The passanger does not need to be checked on security',
-//     options: ['A) True', 'B) False'],
-//     answer: 1, // Index of the correct answer
-//   },
-// ];

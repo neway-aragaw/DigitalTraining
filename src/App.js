@@ -10,6 +10,10 @@ import Tablet from './component/VideoLobby1.js';
 import MCT from './component/MultipleChoiceTablet';
 import Congratulations from './component/Congratulations';
 import "./App.css"
+/* index.css or App.css */
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import CreateUser from './component/CreateUser';
 import CreateUserAccount from './component/CreateUser';
 import Header from './component/Header';
@@ -21,6 +25,8 @@ import About from './component/About.js';
 import TrainingChecklist from './component/Trainers/TrainingChecklist.js';
 import TrainerChecklist from './component/Trainers/TrainingChecklist.js';
 import User from './component/User.js';
+import Tablet2 from './component/ExTablet2.js';
+import ExTabletFinal from './component/ExTbaletFinal.js';
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -39,8 +45,10 @@ function App() {
         <Route exact path="/" element={<Training />} />
         <Route path="/working-environment" element={<WorkingEnvironment userName={userName} />} />
         <Route path="/multiple-choice" element={<MultipleChoiceTest userName={userName} />} />
-        <Route path="/video2" element={<LobbyT />} />
+        <Route path="/working-lobby" element={<LobbyT />} />
         <Route path="/understanding-tablet" element={<TabletX />} />
+        <Route path="/understanding-tablet/understanding-tablet2" element={<Tablet2 />} />
+        <Route path="/final" element={<ExTabletFinal />} />
         <Route path="/user" element={<User setUserName={setUserName} />} />
    
         <Route path="/tablet" element={<Tablet />} />

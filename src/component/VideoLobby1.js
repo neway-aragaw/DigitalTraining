@@ -1,32 +1,16 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Working-env.css'; // Assuming the CSS file exists
-
-import YouTube from 'react-youtube';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faClock, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faCheck } from '@fortawesome/free-solid-svg-icons';
+import tumbnail from './assets/tumb-baggae.jpg'; // Correct relative path
 
 function LobbyT({ userName }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const navigate = useNavigate();
 
-  const opts = {
-    height: '390',
-    width: '640',
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-    },
-  };
-
-  const handlePlayPause = () => {
-    setIsPlaying(!isPlaying); // Update state directly here
-  };
-
   const handleVideoEnd = () => {
-    navigate('/M-C-T'); // Navigate to the multiple choice page
+    navigate('/M-C-L'); // Navigate to the multiple choice page
   };
 
   return (
@@ -38,16 +22,26 @@ function LobbyT({ userName }) {
         </span>
       </div>
       <p className="video-title">
-        Video 2<br />(Understanding PSA's Tablet)
+        Video 1<br />(Understanding the Security Checkpoint)
       </p>
       <p>
         Summary <br />
-        <FontAwesomeIcon icon={faClock} className="icon" /> Video length: 4:19 minutes<br />
+        <FontAwesomeIcon icon={faClock} className="icon" /> Video length: 1 minutes<br />
         <FontAwesomeIcon icon={faCheck} className="icon" /> Assessment included <br />
         <i>(Please click play button when you get ready)</i>
       </p>
-      <YouTube videoId="jFLj1eIRT3s" opts={opts} onEnd={handleVideoEnd} /> {/* Use onEnd for video completion */}
-
+      <video
+        width="640"
+        height="390"
+        controls
+        onEnded={handleVideoEnd}
+        poster={tumbnail}  // Use the imported thumbnail
+      >
+        <source src="https://dwwjecsvmbno7.cloudfront.net/invideo-ai-720 Mastering Wheelchair Assistance at BWI A 2024-07-26.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+        {/*         <source src="https://d12ju51ift25w7.cloudfront.net/gates_final2.mp4" type="video/mp4" />
+ */}
+      </video>
     </div>
   );
 }

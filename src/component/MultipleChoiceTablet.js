@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import for navigation
-import "./MultipleWorking.css"
+import { useNavigate } from 'react-router-dom';
+import './MultipleWorking.css'; // Import your CSS file
+
 const questions = [
   {
-    question: 'We have to scan the gate when we are in the gate',
+    question: 'We don’t have to worry about scanning the passenger\'s boarding pass',
     options: ['A) True', 'B) False'],
     answer: 1, // Index of the correct answer
   },
@@ -12,7 +13,7 @@ const questions = [
 function MCT() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const history = useNavigate(); // Get history from react-router-dom
+  const navigate = useNavigate(); // Use navigate for routing
 
   const handleOptionChange = (event) => {
     setSelectedAnswer(parseInt(event.target.value));
@@ -22,11 +23,8 @@ function MCT() {
     event.preventDefault();
 
     if (selectedAnswer !== null) {
-      if (selectedAnswer === questions[currentQuestion].answer) {
-        history('/congra'); // Navigate to video2 page on correct answer
-      } else {
-        history('/congra'); // Navigate to working-environment page on incorrect answer
-      }
+      // Navigate to congratulations page regardless of the answer
+      navigate('/congra'); 
       setSelectedAnswer(null); // Reset for the next question
     } else {
       alert('Please select an answer.');
@@ -45,24 +43,26 @@ function MCT() {
   const renderQuestion = () => {
     const question = questions[currentQuestion];
     return (
-      <div className='MultipleWorking'>
+      <div className='question-container'>
         <h2>{question.question}</h2>
         <form onSubmit={handleSubmit}>
           {question.options.map((option, index) => (
-            <label key={index}>
-              <input
-                type="radio"
-                value={index}
-                checked={selectedAnswer === index}
-                onChange={handleOptionChange}
-              />
-              {option}
-            </label>
+            <div key={index} className="option">
+              <label>
+                <input
+                  type="radio"
+                  value={index}
+                  checked={selectedAnswer === index}
+                  onChange={handleOptionChange}
+                />
+                {option}
+              </label>
+            </div>
           ))}
           <br />
-          <button type="submit">Submit Answer</button>
+          <button type="submit" className="submit-button">Submit Answer</button>
           {currentQuestion < questions.length - 1 && (
-            <button type="button" onClick={handleNextQuestion}>
+            <button type="button" onClick={handleNextQuestion} className="next-button">
               Next Question
             </button>
           )}
@@ -72,8 +72,8 @@ function MCT() {
   };
 
   return (
-    <div className='MultipleWorking'>
-      <h1>Multiple Choice Test</h1>
+    <div className='mct-container'>
+      <h2>Multiple Choice Test</h2>
       {renderQuestion()}
     </div>
   );
