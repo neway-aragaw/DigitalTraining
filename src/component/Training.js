@@ -43,7 +43,7 @@ function Training() {
           <option value="">Select Language</option>
           <option value="spanish">Español</option>
           <option value="amharic">አማርኛ</option>
-          <option value="hindi">हिन्दी</option>
+          <option value="nepali">हिन्दी</option>
           <option value="philippine">Tagalog</option>
           <option value="arabic">العربية</option>
           {/* Add more languages here */}
