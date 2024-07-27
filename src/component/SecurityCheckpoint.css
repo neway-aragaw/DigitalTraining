@@ -1,0 +1,24 @@
+.security-checkpoint {
+    font-family: Arial, sans-serif;
+    text-align: justify;
+    padding: 20px;
+    padding-top: 240px;
+    background-color: antiquewhite;
+  }
+
+  .security-checkpoint h2{
+    color: #000;
+  }
+  ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+  }
+  .phil{
+    padding-top: 280px;
+  }
+  .nep{
+    padding-top: 10px;
+  }
+  .arab{
+    padding-top: 10px;
+  }

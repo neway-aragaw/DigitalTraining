@@ -17,7 +17,7 @@ body {
     background: rgba(0, 0, 0, 0.7);
     padding: 70px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  
   }
   
   .training h1 {
@@ -108,7 +108,7 @@ h2 {
   
 .training {
   position: relative;
-  padding: 20px; /* Adjust padding as needed */
+ 
 }
 
 
@@ -233,3 +233,53 @@ h2 {
   background: #004080; /* Slightly lighter background color on hover */
 }
 
+
+
+.training {
+  /* padding: 240px 100px; */
+  font-family: Arial, sans-serif;
+  flex: 1;
+}
+
+
+
+.menu {
+  display: none;
+}
+
+.menu.show {
+  display: block;
+}
+
+
+
+
+.training_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.start-link {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.language-menu {
+  position: fixed;
+  bottom: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.language-select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}

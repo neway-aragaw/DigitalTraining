@@ -28,6 +28,12 @@ import User from './component/User.js';
 import Tablet2 from './component/ExTablet2.js';
 import ExTabletFinal from './component/ExTbaletFinal.js';
 import ContactPage from './component/Contact.js';
+import PdfViewer from './component/PdfViewer.js';
+import SecurityCheckpoint from './component/PdfViewer.js';
+import Amharic from './component/Amharic.js';
+import Filipino from './component/Philipino.js';
+import Nepali from './component/Nepali.js';
+import Arabic from './component/Arabic.js';
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -44,6 +50,11 @@ function App() {
       <Route path="/gates" element={<Gates setUserName={setUserName} />} />
       <Route path="/training-home" element={<TrainingHome userName={userName} />} />
         <Route exact path="/" element={<Training />} />
+        <Route exact path="/philippine" element={<Filipino />} />
+        <Route exact path="/arabic" element={<Arabic />} />
+        <Route exact path="/nepali" element={<Nepali />} />
+        <Route exact path="/Amharic" element={<Amharic />} />
+        <Route exact path="/spanish" element={<SecurityCheckpoint />} />
         <Route exact path="/contact" element={<ContactPage />} />
         <Route path="/working-environment" element={<WorkingEnvironment userName={userName} />} />
         <Route path="/multiple-choice" element={<MultipleChoiceTest userName={userName} />} />
