@@ -34,6 +34,7 @@ import Amharic from './component/Amharic.js';
 import Filipino from './component/Philipino.js';
 import Nepali from './component/Nepali.js';
 import Arabic from './component/Arabic.js';
+import SecurityCheckpointAmharic from './component/Amharic.js';
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -53,7 +54,7 @@ function App() {
         <Route exact path="/philippine" element={<Filipino />} />
         <Route exact path="/arabic" element={<Arabic />} />
         <Route exact path="/nepali" element={<Nepali />} />
-        <Route exact path="/Amharic" element={<Amharic />} />
+        <Route exact path="/Amharic" element={<SecurityCheckpointAmharic />} />
         <Route exact path="/spanish" element={<SecurityCheckpoint />} />
         <Route exact path="/contact" element={<ContactPage />} />
         <Route path="/working-environment" element={<WorkingEnvironment userName={userName} />} />

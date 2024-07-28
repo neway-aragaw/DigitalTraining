@@ -176,3 +176,18 @@ body {
 .red:focus {
   outline: none; /* Remove default focus outline */
 }
+.language-menu {
+  bottom: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.language-select {
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #343a40;
+  cursor: pointer;
+}

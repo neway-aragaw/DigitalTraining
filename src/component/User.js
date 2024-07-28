@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CreateUserAccount.css'; // Update to match the new CSS file name
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 function User({ setUserName }) {
   const [firstName, setFirstName] = useState('');
@@ -34,7 +36,10 @@ function User({ setUserName }) {
       <h2>Create User Account</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
-          <label htmlFor="firstName">First Name</label>
+          <label htmlFor="firstName">
+            <FontAwesomeIcon icon={faUser} className="input-icon" />
+            First Name
+          </label>
           <input
             id="firstName"
             type="text"
@@ -44,7 +49,10 @@ function User({ setUserName }) {
           />
         </div>
         <div className="input-group">
-          <label htmlFor="lastName">Last Name</label>
+          <label htmlFor="lastName">
+            <FontAwesomeIcon icon={faUser} className="input-icon" />
+            Last Name
+          </label>
           <input
             id="lastName"
             type="text"
@@ -54,7 +62,10 @@ function User({ setUserName }) {
           />
         </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Display error message */}
-        <button type="submit">Create Account</button>
+        <button type="submit">
+          <FontAwesomeIcon icon={faCheck} className="button-icon" />
+          Create Account
+        </button>
       </form>
     </div>
   );

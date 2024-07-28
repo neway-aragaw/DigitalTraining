@@ -142,7 +142,7 @@ h2 {
   position: fixed;
   top: 60px; /* Adjust based on the icon size and padding */
   right: 20px;
-  background: white; /* Background color of the menu */
+  background: rgb(177, 155, 155); /* Background color of the menu */
   border: 1px solid #ccc; /* Optional: Add border */
   border-radius: 4px; /* Optional: Rounded corners */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
@@ -225,7 +225,7 @@ h2 {
   text-underline-offset: 6px;
   text-align: center;
   color: #faf9f9; /* Text color */
-  background-color: rgba(36, 36, 36, 0.42); /* Background color of menu items */
+  background-color: rgb(29, 29, 29); /* Background color of menu items */
   border-bottom: 1px solid rgb(6, 21, 44); /* Border between items */
 }
 
@@ -267,19 +267,8 @@ h2 {
   margin-right: 20px;
 }
 
-.language-menu {
-  position: fixed;
-  bottom: 20px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
-  border-radius: 4px;
-  padding: 10px;
-  z-index: 1000; /* Ensure it appears above other content */
-}
-
-.language-select {
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 12px;
-  cursor: pointer;
+.menu-icon{
+color: #f39c12;
+border: 2px solid rgb(247, 241, 211);
+border-radius: 5px;
 }

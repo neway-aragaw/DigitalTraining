@@ -1,7 +1,21 @@
-body{
-    background-color: rgb(6, 21, 44);
-    color: black;
-    
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(29, 29, 29);
+  color: black;
+  position: relative; /* Ensure the pseudo-element is positioned relative to the body */
+}
+
+/* Create the rectangular border effect */
+.training-container::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 1px;
+  bottom: 5px;
+  left: 1px;
+  border: 2px solid white; /* Style the border */
+  pointer-events: none; /* Ensure the pseudo-element does not interfere with user interactions */
 }
 
 .training_header .start-training{
@@ -41,7 +55,7 @@ body{
    
     color: #fff;
    
-    background-color: rgb(6, 21, 44); /* Light blue background */
+    background-color: rgb(29, 29, 29); /* Light blue background */
     font-family: sans-serif;
   }
   
@@ -76,7 +90,7 @@ body{
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    background-color:rgb(6, 21, 44); /* Light blue background */
+    background-color:rgb(29, 29, 29); /* Light blue background */
     font-family:'Times New Roman', Times, serif;
   }
   
@@ -197,7 +211,7 @@ body{
 }
 
 .to-middle {
-  background-color: rgba(11, 149, 195, 0.826);
+  background-color: rgb(12, 124, 165);
   /* width: 300px;
   height: 450px; */
   color: #000;
@@ -238,9 +252,9 @@ body{
 .to-middle {
 
   width: 350px;
-  height: 570px;
+  height: 600px;
   margin: 0 auto; /* Centers the div horizontally */
-  padding: 20px; /* Adds padding for better spacing inside the div */
+  padding: 8px 20px 20px; /* Adds padding for better spacing inside the div */
   border-radius: 8px; /* Adds rounded corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.2); /* Shadow with red tint */
   display: flex;

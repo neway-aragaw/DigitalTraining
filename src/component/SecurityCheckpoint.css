@@ -1,8 +1,10 @@
+
 .security-checkpoint {
     font-family: Arial, sans-serif;
     text-align: justify;
     padding: 20px;
-    padding-top: 240px;
+   
+    padding-top: 370px;
     background-color: antiquewhite;
   }
 
@@ -13,7 +15,8 @@
     list-style-type: decimal;
     padding-left: 20px;
   }
-  .phil{
+  .esp{padding-top: 570px;}
+  .phil {
     padding-top: 280px;
   }
   .nep{
@@ -21,4 +24,7 @@
   }
   .arab{
     padding-top: 10px;
+  }
+  .amh{
+    padding-top: 400px;
   }

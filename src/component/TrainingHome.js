@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './TrainingHome.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faPlay,faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 function TrainingHome() {
   const [username, setUsername] = useState('');
@@ -32,46 +32,65 @@ function TrainingHome() {
     navigate('/'); // Redirect to home page after logging out
   };
 
+  const handleLanguageChange = (event) => {
+    const selectedLanguage = event.target.value;
+    if (selectedLanguage) {
+      navigate(`/${selectedLanguage}`);
+    }
+  };
+
   return (
     <div className="training-home to-middle">
-  <div className="user-icon-container">
-        <FontAwesomeIcon icon={faUser} className="user-icon" />
-        <span className="user-name"><u>{username ? username : "PSA-User"}</u></span>
-        <br />
-      </div>
+     
 
-      <h2>Welcome, {username}!</h2>
+      <h2>Welcome {username}!</h2>
       
-      <p>Welcome <i className='username'>{username ? username : "PSA"} ,</i> please select the trainings:</p>
+      <p>  Please select the trainings:</p>
       <div className="button-group">
         <div className="button-item">
           <p>1) Understanding the Security Checkpoint</p>
           <Link to="/working-environment">
-            <button onClick={handleButtonClick}>Start</button>
+            <button onClick={handleButtonClick}>
+              <FontAwesomeIcon icon={faPlay} className="button-icon" /> Start
+            </button>
           </Link>
         </div>
         <div className="button-item">
           <p>2) Working at the Gate</p>
           <Link to="/gates">
-            <button onClick={handleButtonClick}>Start</button>
+            <button onClick={handleButtonClick}>
+              <FontAwesomeIcon icon={faPlay} className="button-icon" /> Start
+            </button>
           </Link>
         </div>
         <div className="button-item">
           <p>3) Working in the Baggage Claim and Lobby</p>
           <Link to="/working-lobby">
-            <button onClick={handleButtonClick}>Start</button>
+            <button onClick={handleButtonClick}>
+              <FontAwesomeIcon icon={faPlay} className="button-icon" /> Start
+            </button>
           </Link>
         </div>
         <div className="button-item">
           <p>4) Understanding How to Use the Tablet</p>
           <Link to="/understanding-tablet">
-            <button onClick={handleButtonClick}>Start</button>
+            <button onClick={handleButtonClick}>
+              <FontAwesomeIcon icon={faPlay} className="button-icon" /> Start
+            </button>
           </Link>
         </div>
-
-
+        <div className="language-menu">
+          <select id="language-select" className="language-select" onChange={handleLanguageChange}>
+            <option value="">Select Language</option>
+            <option value="spanish">Español</option>
+            <option value="amharic">አማርኛ</option>
+            <option value="nepali">हिन्दी</option>
+            <option value="philippine">Tagalog</option>
+            <option value="arabic">العربية</option>
+            {/* Add more languages here */}
+          </select>
+        </div>
       </div>
-     
     </div>
   );
 }

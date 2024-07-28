@@ -37,7 +37,7 @@ function WorkingEnvironment({ userName }) {
         onEnded={handleVideoEnd}
         poster={tumbnail_gate}  // Use the imported thumbnail
       >
-        <source src="https://d12ju51ift25w7.cloudfront.net/gates_final2.mp4" type="video/mp4" />
+        <source src="https://dwwjecsvmbno7.cloudfront.net/gates_final2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>

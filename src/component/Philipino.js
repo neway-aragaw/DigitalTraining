@@ -1,5 +1,5 @@
 import React from 'react';
-import './SecurityCheckpoint.css'; // Create a CSS file for styling if needed
+import './SecurityCheckpoint.css'; // Ensure this CSS file contains the appropriate styles
 
 function Filipino() {
   return (
@@ -27,6 +27,27 @@ function Filipino() {
       <p>
         Tandaan: Ang inyong papel bilang tagapagbigay serbisyo ay mahalaga sa pagbibigay ng mahusay na serbisyo sa customer. Inaasahan namin ang inyong mga kontribusyon sa koponan ng PSA.
         Maligayang pagdating muli!
+      </p>
+      <h2>Bahagi 2 - Pagtrabaho sa Gate</h2>
+      <p>
+        Ang inyong pangunahing tungkulin bilang wheelchair agent ay tumulong sa mga pasahero na may kapansanan sa pag-navigate sa terminal ng paliparan. Kasama rito ang pagbibigay ng transportasyon sa wheelchair, pagtiyak ng kaginhawahan ng pasahero, at pag-aalaga sa kanilang mga pangangailangan.
+      </p>
+      <h3>Mga Nakatalagang Gate</h3>
+      <p>
+        Ang inyong pangunahing pokus ay ang pagtulong sa mga pasahero sa mga gate A7 hanggang A16 sa Concourse A, mga gate B2 hanggang B15 sa Concourse B, at mga gate C8 hanggang C14 sa Concourse C.
+      </p>
+      <h3>Mga Pamamaraan sa Gate</h3>
+      <p>
+        Pagdating sa inyong nakatalagang gate, i-scan ang gate code at QR code na matatagpuan malapit sa computer ng gate agent. Ito ay magsisimula ng inyong shift sa tiyak na gate na iyon.
+      </p>
+      <p>
+        Habang dumarating ang mga pasahero, i-welcome sila ng mainit at magbigay ng tulong. I-scan ang kanilang boarding pass para i-verify ang kanilang impormasyon. Kung kailangan nila ng wheelchair, ibigay ito at samahan sila kung kinakailangan. Maghanda na tumulong sa kanilang bagahe, i-direkta ang mga pasahero sa mga banyo o iba pang mga pasilidad, at gumamit ng elevator kapag inililipat ang mga pasahero sa pagitan ng mga Concourses A at C.
+      </p>
+      <p>
+        Halimbawa, si James, isang wheelchair agent na itinalaga sa gate B2, ay dumating sa kanyang posisyon at i-scan ang kinakailangang mga code. Isang pasahero, si Mrs. Johnson, ay lumapit sa gate na nangangailangan ng tulong. Binati siya ni James ng mainit, i-scan ang kanyang boarding pass, at ibinigay sa kanya ang wheelchair. Si Mrs. Johnson ay nagsabi na kailangan niyang gumamit ng banyo bago pumunta sa kanyang gate. Inihatid siya ni James sa pinakamalapit na banyo, tinitiyak ang kanyang kaginhawahan at seguridad sa buong proseso.
+      </p>
+      <p>
+        Laging siguraduhin na mayroong ilang mga wheelchair na magagamit sa inyong gate upang matugunan ang pangangailangan ng mga pasahero. Bukod pa rito, iwasan ang pag-upo sa wheelchair habang naghihintay para sa mga pasahero, dahil maaari itong magpahirap sa inyong kakayahang magbigay ng mabilis na tulong sa iba.
       </p>
     </div>
   );
