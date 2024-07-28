@@ -12,7 +12,16 @@ body {
     height: 100vh;
     overflow: hidden;
   }
-  
+  .to-middle::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 1px;
+    bottom: 5px;
+    left: 1px;
+    border: 2px solid rgba(5, 192, 244, 0.502); /* Style the border */
+    pointer-events: none; /* Ensure the pseudo-element does not interfere with user interactions */
+  }
   .training-home {
     text-align: center;
     background:rgb(21, 30, 66);

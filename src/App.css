@@ -14,7 +14,7 @@ body {
   right: 1px;
   bottom: 5px;
   left: 1px;
-  border: 2px solid white; /* Style the border */
+  border: 2px solid rgba(255, 255, 255, 0.493); /* Style the border */
   pointer-events: none; /* Ensure the pseudo-element does not interfere with user interactions */
 }
 
