@@ -1,5 +1,4 @@
-/* TrainingHome.css */
-
+/* General Styles */
 body {
     margin: 0;
     padding: 0;
@@ -11,8 +10,11 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
-  }
-  .to-middle::before {
+    position: relative; /* Ensure absolute positioning works for pseudo-elements */
+}
+
+/* Border Effect */
+.to-middle::before {
     content: "";
     position: absolute;
     top: 5px;
@@ -21,182 +23,130 @@ body {
     left: 1px;
     border: 2px solid rgba(5, 192, 244, 0.502); /* Style the border */
     pointer-events: none; /* Ensure the pseudo-element does not interfere with user interactions */
-  }
-  .training-home {
+}
+
+/* Training Home Layout */
+.training-home {
     text-align: center;
-    background:rgb(21, 30, 66);
-    padding: 50px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    width: 80%;
-    max-width: 600px;
-  }
-  
-  .training-home h1 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    color: #f39c12;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  
-  .button-group {
+}
+
+/* Button Group Styles */
+.button-group {
     display: flex;
-    flex-direction: column;
-   
-  }
-  
-  .button-group a {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+}
+
+.button-group a {
     text-decoration: none;
-  }
-  
-  .button-group button {
-    background: #085dde;
+}
+
+.button-group button {
+    background: #f39c12;
     color: #fff;
-    height: 50px;
-    width: 80%;
-    max-width: 500px;
-    padding: 15px;
-    border: none;
+    padding: 15px 30px;
     border-radius: 5px;
     font-size: 1.2em;
-    cursor: pointer;
     transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .button-group button:hover {
-    background: #074baf;
-  }
-  body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: Arial, sans-serif;
-    background-color:rgb(8, 33, 91);
-    color: #343a40;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-  }
-  
-  h1, h2 {
-    color: #343a40;
-  }
-  
-  button {
-    padding: 2px 20px;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: white;
-    background-color: grey;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    margin: 2px;
-  }
-  
-
-  .username{
-    color: #f39c12;
-  }
-  .user-section{
-    margin-top: 30px;
-    background-color: #f39c12;
-    height: 50px;
-    width: 150px;
-    border-radius: 50%;
-    margin-top: 30px;
-    background-color: #f39c12;
-    height: 50px;
-    width: 150px;
-    border-radius: 50%;
-  }
-  .user-icon-container {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: rgb(207, 154, 20);
-    color: white;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-icon {
-    margin-right: 8px;
-  }
-  
-  .user-name {
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  
-  .button-group {
-  display: flex;
-  flex-direction: column; /* Ensure buttons are stacked vertically */
+    margin: 10px 0;
 }
 
+.button-group button:hover {
+    background: #074baf;
+}
 
-
+/* Button Item Styles */
 .button-item p {
-  margin: 0; /* Remove default margin from <p> to reduce space */
+    margin: 0; /* Remove default margin from <p> to reduce space */
 }
-.button-item {
-  margin: 10px 0;
-}
-
-/* TrainingHome.css */
 
 .button-item {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 
-.red {
-  background: linear-gradient(135deg, #ff4d4d, #ff0000); /* Gradient background */
-  color: white; /* White text color */
-  border: none; /* Remove border */
-  padding: 10px 20px; /* Add padding */
-  font-size: 16px; /* Adjust font size */
-  cursor: pointer; /* Show pointer cursor on hover */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-  text-transform: uppercase; /* Uppercase text */
-}
-
-.red:hover {
-  background: linear-gradient(135deg, #e60000, #cc0000); /* Darker gradient on hover */
-  transform: scale(1.05); /* Slightly larger on hover */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-}
-
-.red:focus {
-  outline: none; /* Remove default focus outline */
-}
-.language-menu {
-  bottom: 20px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
-  border-radius: 4px;
-  padding: 10px;
-  z-index: 1000; /* Ensure it appears above other content */
-}
-
+/* Language Select Styles */
 .language-select {
-  padding: 5px;
-  border-radius: 4px;
-  font-size: 12px;
-  color: #343a40;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #343a40;
+    cursor: pointer;
+}
+
+/* Media Query for Desktop */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Ensure the button group takes full width */
+}
+.button-item {
+  width: 100%;
+  max-width: 600px; /* Maximum width for the button items */
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Button styling */
+.button-item button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.hidden {
+  display: none; /* Hide main content */
+}
+
+.pin-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(33, 33, 33);
+  border: 1px solid #646262;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.pin-dialog h2 {
+  margin: 0 0 10px;
+}
+
+.pin-dialog input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.pin-dialog button {
+  padding: 10px;
+  border: none;
+ 
+  background-color: #d09e32;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.pin-dialog button:hover {
+  background-color: #007bff;
+}
+
+.pin-dialog button:last-child {
+  background-color: #6c757d;
+}
+
+.pin-dialog button:last-child:hover {
+  background-color: #5a6268;
 }

@@ -15,12 +15,7 @@ function WorkingEnvironment({ userName }) {
 
   return (
     <div className="video-player">
-      <div className="user-icon-container">
-        <FontAwesomeIcon icon={faUser} className="user-icon" />
-        <span className="user-name">
-          <u>{userName ? userName : 'PSA-User'}</u>
-        </span>
-      </div>
+    
       <p className="video-title">
         Video 1<br />(Working at the gate)
       </p>

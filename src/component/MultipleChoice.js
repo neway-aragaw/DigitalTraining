@@ -66,10 +66,7 @@ function MultipleChoiceTest({ userName }) {
     const question = questions[currentQuestion];
     return (
       <div className='MultipleWorking'>
-        <div className="user-icon-container">
-          <FontAwesomeIcon icon={faUser} className="user-icon" />
-          <span className="user-name"><u>{userName ? userName : "PSA-User"}</u></span>
-        </div>
+     
         <div className="content-wrapper">
           <h2>Assessment Question</h2>
           <p className="question-text">{question.question}</p> {/* Updated with new class */}

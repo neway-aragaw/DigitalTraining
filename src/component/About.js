@@ -16,7 +16,7 @@ const About = () => {
         <li><strong>Quick Directory:</strong> Provides a directory to quickly locate important places, such as shuttles and other key locations.</li>
       </ul>
       <p>
-        Developed by Neway Aragaw(web developer), a PSA (Prospect employee) at Prospect BWI, this project was created for free. It aims to enhance training efficiency and provide a valuable tool for Prospect.
+        Developed by <a href="https://portfolio-react-mbcsufngm-newayaragaws-projects.vercel.app/" target="_blank" rel="noopener noreferrer">Neway Aragaw</a> (web developer), a PSA (Prospect employee) at Prospect BWI, this project was created for free. It aims to enhance training efficiency and provide a valuable tool for Prospect.
       </p>
     </div>
   );

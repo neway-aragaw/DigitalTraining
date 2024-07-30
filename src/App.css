@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-color: rgb(29, 29, 29);
   color: black;
+  overflow: auto;
   position: relative; /* Ensure the pseudo-element is positioned relative to the body */
 }
 
@@ -343,4 +344,36 @@ body {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 50%;
   padding: 10px;
+}
+
+@media (min-width: 992px) {
+
+
+  .training-home {
+      width: 100%; /* Wider container for larger screens */
+      max-width: 1200px; /* Maximum width to maintain layout consistency */
+      padding: 20px;
+      background-color: #025973; /* Dark background for training home section */
+      border-radius: 10px;
+      align-items: center; /* Center items horizontally */
+      justify-content: center;
+    /* Center items vertically */
+      height: 70vh; /* Adjust height for better spacing */
+  }
+
+  .button-group {
+      flex-direction: column; /* Stack buttons vertically */
+      align-items: center; /* Center buttons horizontally */
+      justify-content: space-between; /* Center buttons vertically */
+  }
+
+  .button-group button {
+      margin: 10px 0; /* Space between buttons */
+      font-size: 1.5em; /* Larger font size for desktop */
+      padding: 20px 40px; /* Larger padding for desktop */
+  }
+
+  .language-select {
+      font-size: 20px; /* Larger font size for better readability on desktop */
+  }
 }

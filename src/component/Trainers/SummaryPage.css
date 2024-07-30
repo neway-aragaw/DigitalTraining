@@ -1,0 +1,44 @@
+.summary-page {
+    padding: 20px;
+  }
+  
+  .summary-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .progress-container {
+    margin-bottom: 20px;
+  }
+  
+  .linear-progress-bar {
+    height: 20px;
+    position: relative;
+    border-radius: 5px;
+  }
+  
+  .progress-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+  }
+  
+  .summary-items {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .summary-item {
+    padding: 10px;
+  }
+  
+  .summary-item.completed {
+    text-decoration: line-through;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  

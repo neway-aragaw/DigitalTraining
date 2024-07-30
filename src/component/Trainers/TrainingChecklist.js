@@ -22,23 +22,9 @@ function TrainerChecklist({ trainerName }) {
 
   const navigate = useNavigate();
 
-  const handleCompleteClick = () => {
-    navigate('/'); // Redirects to the homepage
+  const handleSeeSummaryClick = () => {
+    navigate('/summary', { state: { checklistItems } }); // Pass checklist items to summary page
   };
-
-  const allCompleted = checklistItems.every(item => item.completed);
-  const completedCount = checklistItems.filter(item => item.completed).length;
-  const percentage = (completedCount / checklistItems.length) * 100;
-
-  // Determine the background color based on the percentage
-  let progressBarColor;
-  if (percentage >= 100) {
-    progressBarColor = '#28a745'; // Green
-  } else if (percentage >= 67) {
-    progressBarColor = '#f1c40f'; // Yellow
-  } else {
-    progressBarColor = '#e74c3c'; // Light Red
-  }
 
   return (
     <div className="trainer-checklist">
@@ -46,42 +32,31 @@ function TrainerChecklist({ trainerName }) {
       <p className="intro-text">
         Please go through each task and check the boxes once you have observed or completed them with your trainees.
       </p>
-      <div className="checklist-container">
-      <div className="">
-          <p >
-            Checklist Summary
-          </p>
-         
-        </div>
-        <div className="progress-container">
-          <div
-            className="linear-progress-bar"
-            style={{ 
-              width: `${percentage}%`, 
-              backgroundColor: progressBarColor 
-            }}
-          >
-            <span className="progress-text">{`${Math.round(percentage)}%`}</span>
-          </div>
-        </div>
-      <br></br>
-      <br></br>
-        <ul className="checklist-items">
+      <table className="checklist-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
           {checklistItems.map((item) => (
-            <li key={item.id} className="checklist-item">
-              <p className='item'>{item.title}</p>
-              <input
-                type="checkbox"
-                checked={item.completed}
-                onChange={() => handleCheckboxChange(item.id)}
-              />
-            </li>
+            <tr key={item.id} className={item.completed ? 'completed' : ''}>
+              <td>{item.title}</td>
+              <td>
+                <input
+                  type="checkbox"
+                  checked={item.completed}
+                  onChange={() => handleCheckboxChange(item.id)}
+                />
+              </td>
+            </tr>
           ))}
-        </ul>
-        <div className="button-container">
-          <p>Finish the Checklist:</p>
-          <button onClick={handleCompleteClick}>Complete</button>
-        </div>
+        </tbody>
+      </table>
+      <div className="button-container">
+       
+        <button onClick={handleSeeSummaryClick}>See Progress</button>
       </div>
     </div>
   );

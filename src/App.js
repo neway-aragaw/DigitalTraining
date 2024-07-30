@@ -35,6 +35,8 @@ import Filipino from './component/Philipino.js';
 import Nepali from './component/Nepali.js';
 import Arabic from './component/Arabic.js';
 import SecurityCheckpointAmharic from './component/Amharic.js';
+import SummaryPage from './component/Trainers/Summary.js';
+import International from './component/International.js';
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -51,6 +53,8 @@ function App() {
       <Route path="/gates" element={<Gates setUserName={setUserName} />} />
       <Route path="/training-home" element={<TrainingHome userName={userName} />} />
         <Route exact path="/" element={<Training />} />
+        <Route exact path="/international" element={<International />} />
+        <Route exact path="/summary" element={<SummaryPage />} />
         <Route exact path="/philippine" element={<Filipino />} />
         <Route exact path="/arabic" element={<Arabic />} />
         <Route exact path="/nepali" element={<Nepali />} />

@@ -15,18 +15,13 @@ function LobbyT({ userName }) {
 
   return (
     <div className="video-player">
-      <div className="user-icon-container">
-        <FontAwesomeIcon icon={faUser} className="user-icon" />
-        <span className="user-name">
-          <u>{userName ? userName : 'PSA-User'}</u>
-        </span>
-      </div>
+  
       <p className="video-title">
         Video 1<br />(Understanding the Security Checkpoint)
       </p>
       <p>
         Summary <br />
-        <FontAwesomeIcon icon={faClock} className="icon" /> Video length: 1 minutes<br />
+        <FontAwesomeIcon icon={faClock} className="icon" /> Video length: 4 minutes<br />
         <FontAwesomeIcon icon={faCheck} className="icon" /> Assessment included <br />
         <i>(Please click play button when you get ready)</i>
       </p>

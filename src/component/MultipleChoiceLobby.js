@@ -65,10 +65,7 @@ function MultipleChoiceLobby({ userName }) {
     const question = questions[currentQuestion];
     return (
       <div className='MultipleWorking'>
-        <div className="user-icon-container">
-          <FontAwesomeIcon icon={faUser} className="user-icon" />
-          <span className="user-name"><u>{userName ? userName : "PSA-User"}</u></span>
-        </div>
+       
         <div className="content-wrapper">
           <h2>Assessment Question (<i>Section 2</i>)</h2>
           <p>{question.question}</p>
