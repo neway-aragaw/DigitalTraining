@@ -2,7 +2,10 @@
   padding: 20px;
   font-family: Arial, sans-serif;
 }
-
+.training-summary{
+  background-color: #d7d5d0;
+  padding:20px ;
+}
 .summary-title {
   font-size: 24px;
   margin-bottom: 20px;
@@ -12,10 +15,7 @@
   background-color: #e6e5e1;
   padding:0 20px;
 }
-.training-summary{
-  background-color: #d7d5d0;
-  padding:0 20px;
-}
+
 .profile-summary h2{
 color: #000;
 }
@@ -53,7 +53,7 @@ color: #000;
 
 button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: goldenrod;
   color: white;
   border: none;
   border-radius: 5px;
