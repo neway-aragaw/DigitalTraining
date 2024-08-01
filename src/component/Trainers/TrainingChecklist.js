@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaCheckCircle, FaEdit, FaSave, FaSignOutAlt, FaHome } from 'react-icons/fa'; // Import icons
 import './TrainingChecklist.css'; // Assuming the CSS file exists
 
 function TrainerChecklist() {
-  const [checklistItems, setChecklistItems] = useState([
-    { id: 1, title: '1. Security Checkpoint Training', completed: false },
-    { id: 2, title: '2. Gate Identification & Navigation Training', completed: false },
-    { id: 3, title: '3. Connecting Flight Assistance', completed: false },
-    { id: 4, title: '4. Tablet Usage Training', completed: false },
-    { id: 5, title: '5. Baggage Claim Procedures Training', completed: false },
-    { id: 6, title: '6. Working from the Lobby and Collecting Chairs', completed: false },
-  ]);
-
+  const [checklistItems, setChecklistItems] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [trainerName, setTrainerName] = useState('');
   const [traineeName, setTraineeName] = useState('');
@@ -26,6 +19,14 @@ function TrainerChecklist() {
     const storedTraineeName = localStorage.getItem('traineeName');
     const storedAuth = localStorage.getItem('isAuthenticated') === 'true';
     const storedNote = localStorage.getItem('trainingNote') || ''; // Retrieve saved note
+    const storedChecklistItems = JSON.parse(localStorage.getItem('checklistItems')) || [
+      { id: 1, title: '1. Security Checkpoint Training', completed: false },
+      { id: 2, title: '2. Gate Identification & Navigation Training', completed: false },
+      { id: 3, title: '3. Connecting Flight Assistance', completed: false },
+      { id: 4, title: '4. Tablet Usage Training', completed: false },
+      { id: 5, title: '5. Baggage Claim Procedures Training', completed: false },
+      { id: 6, title: '6. Working from the Lobby and Collecting Chairs', completed: false },
+    ];
 
     if (storedAuth && storedTrainerName && storedTraineeName) {
       setIsAuthenticated(true);
@@ -36,14 +37,15 @@ function TrainerChecklist() {
     }
 
     setNote(storedNote); // Set the note from localStorage
+    setChecklistItems(storedChecklistItems); // Set the checklist items from localStorage
   }, [navigate]);
 
   const handleCheckboxChange = (id) => {
-    setChecklistItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, completed: !item.completed } : item
-      )
+    const updatedChecklistItems = checklistItems.map((item) =>
+      item.id === id ? { ...item, completed: !item.completed } : item
     );
+    setChecklistItems(updatedChecklistItems);
+    localStorage.setItem('checklistItems', JSON.stringify(updatedChecklistItems)); // Save updated checklist items to localStorage
   };
 
   const handleNoteChange = (e) => {
@@ -61,6 +63,7 @@ function TrainerChecklist() {
     localStorage.removeItem('traineeName');
     localStorage.removeItem('isAuthenticated');
     localStorage.removeItem('trainingNote'); // Remove note from localStorage
+    localStorage.removeItem('checklistItems'); // Remove checklist items from localStorage
     setIsAuthenticated(false);
     navigate('/login');
   };
@@ -89,7 +92,9 @@ function TrainerChecklist() {
               </tbody>
             </table>
             <div className="button-container">
-              <button onClick={handleSignOut}>Sign Out</button>
+              <button onClick={handleSignOut}>
+                <FaSignOutAlt /> Sign Out
+              </button>
             </div>
           </div>
           <p className="intro-text">
@@ -112,6 +117,7 @@ function TrainerChecklist() {
                       checked={item.completed}
                       onChange={() => handleCheckboxChange(item.id)}
                     />
+                    {item.completed} {/* Display a checkmark icon if completed */}
                   </td>
                 </tr>
               ))}
@@ -119,7 +125,7 @@ function TrainerChecklist() {
           </table>
           <div className="button-container">
             <button onClick={() => setShowNoteSection(!showNoteSection)}>
-              {showNoteSection ? 'Hide Note' : 'Add Note'}
+              {showNoteSection ? <FaEdit /> : <FaEdit />} {showNoteSection ? 'Hide Note' : 'Add Note'}
             </button>
           </div>
           {showNoteSection && (
@@ -130,12 +136,14 @@ function TrainerChecklist() {
                 onChange={handleNoteChange}
               />
               <button onClick={handleSaveNote}>
-                {noteSaved ? 'Note Saved' : 'Save Note'}
+                {noteSaved ? <FaSave /> : <FaSave />} {noteSaved ? 'Note Saved' : 'Save Note'}
               </button>
             </div>
           )}
           <div className="button-container">
-            <button onClick={() => navigate('/finish')}>Finish</button>
+            <button onClick={() => navigate('/finish')}>
+              <FaHome /> Finish
+            </button>
           </div>
         </>
       ) : (

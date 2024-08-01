@@ -131,3 +131,25 @@ textarea:focus {
 .trainer-checklist button{
   background-color: goldenrod;
 }
+.check-icon {
+  color: green;
+}
+
+.button-container button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

@@ -8,9 +8,20 @@
   margin-bottom: 20px;
 }
 
+.summary-content{
+  background-color: #e6e5e1;
+  padding:0 20px;
+}
+.training-summary{
+  background-color: #d7d5d0;
+  padding:0 20px;
+}
+.profile-summary h2{
+color: #000;
+}
 .progress-container {
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: #d3cece;
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 20px;
