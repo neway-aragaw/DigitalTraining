@@ -1,44 +1,54 @@
 .summary-page {
-    padding: 20px;
-  }
-  
-  .summary-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .progress-container {
-    margin-bottom: 20px;
-  }
-  
-  .linear-progress-bar {
-    height: 20px;
-    position: relative;
-    border-radius: 5px;
-  }
-  
-  .progress-text {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-  }
-  
-  .summary-items {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .summary-item {
-    padding: 10px;
-  }
-  
-  .summary-item.completed {
-    text-decoration: line-through;
-  }
-  
-  button {
-    margin-top: 20px;
-  }
-  
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.summary-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.linear-progress-bar {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  transition: width 0.3s ease;
+}
+
+.summary-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.summary-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.summary-item.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

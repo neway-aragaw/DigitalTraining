@@ -37,6 +37,8 @@ import Arabic from './component/Arabic.js';
 import SecurityCheckpointAmharic from './component/Amharic.js';
 import SummaryPage from './component/Trainers/Summary.js';
 import International from './component/International.js';
+import Login from './component/Trainers/Login.js';
+import TrainingSummary from './component/Trainers/Summary.js';
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -48,11 +50,13 @@ function App() {
     
    
       <Route path="/M-C-G" element={<MultipleGates setUserName={setUserName} />} />
-      <Route path="/trainers" element={     <TrainerChecklist trainerName="John Doe" />} />
+      <Route path="/checklist" element={     <TrainerChecklist trainerName="John Doe" />} />
       <Route path="/about" element={<About setUserName={setUserName} />} />
       <Route path="/gates" element={<Gates setUserName={setUserName} />} />
       <Route path="/training-home" element={<TrainingHome userName={userName} />} />
         <Route exact path="/" element={<Training />} />
+        <Route exact path="/finish" element={<TrainingSummary />} />
+        <Route exact path="/login" element={<Login />} />
         <Route exact path="/international" element={<International />} />
         <Route exact path="/summary" element={<SummaryPage />} />
         <Route exact path="/philippine" element={<Filipino />} />

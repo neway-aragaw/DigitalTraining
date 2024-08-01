@@ -1,49 +1,63 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import './SummaryPage.css'; // Create this CSS file as needed
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './SummaryPage.css'; // Create this CSS file for styling
 
-function SummaryPage() {
-  const location = useLocation();
+const TrainingSummary = () => {
+  const [trainerName, setTrainerName] = useState('');
+  const [traineeName, setTraineeName] = useState('');
+  const [note, setNote] = useState('');
+  const [currentDateTime, setCurrentDateTime] = useState('');
+
   const navigate = useNavigate();
-  const { checklistItems } = location.state || { checklistItems: [] };
 
-  const completedCount = checklistItems.filter(item => item.completed).length;
-  const percentage = (completedCount / checklistItems.length) * 100;
+  useEffect(() => {
+    const storedTrainerName = localStorage.getItem('trainerName');
+    const storedTraineeName = localStorage.getItem('traineeName');
+    const storedNote = localStorage.getItem('trainingNote') || '';
 
-  // Determine the background color based on the percentage
-  let progressBarColor;
-  if (percentage >= 100) {
-    progressBarColor = '#28a745'; // Green
-  } else if (percentage >= 67) {
-    progressBarColor = '#f1c40f'; // Yellow
-  } else {
-    progressBarColor = '#e74c3c'; // Light Red
-  }
+    if (storedTrainerName && storedTraineeName) {
+      setTrainerName(storedTrainerName);
+      setTraineeName(storedTraineeName);
+      setNote(storedNote);
+      
+      // Set current date and time in EST
+      const now = new Date();
+      const estTime = now.toLocaleString('en-US', { timeZone: 'America/New_York' });
+      setCurrentDateTime(estTime);
+    } else {
+      navigate('/login');
+    }
+  }, [navigate]);
 
   return (
-    <div className="summary-page">
-      <p className="summary-title">Checklist Summary</p>
-      <div className="progress-container">
-        <div
-          className="linear-progress-bar"
-          style={{ 
-            width: `${percentage}%`, 
-            backgroundColor: progressBarColor 
-          }}
-        >
-          <span className="progress-text">{`${Math.round(percentage)}%`}</span>
+    <div className="training-summary">
+      <div className="profile-summary">
+        <h2>Training Summary</h2>
+        <p><strong>Trainer:</strong> {trainerName}</p>
+        <p><strong>Trainee:</strong> {traineeName}</p>
+        <p><strong>Date and Time (EST):</strong> {currentDateTime}</p>
+      </div>
+      <div className="summary-content">
+        <h3>Summary of Training:</h3>
+        <p>Your training is complete. Below is a summary of your session:</p>
+        <ul>
+          <li>1. Security Checkpoint Training - Completed</li>
+          <li>2. Gate Identification & Navigation Training - Completed</li>
+          <li>3. Connecting Flight Assistance - Completed</li>
+          <li>4. Tablet Usage Training - Completed</li>
+          <li>5. Baggage Claim Procedures Training - Completed</li>
+          <li>6. Working from the Lobby and Collecting Chairs - Completed</li>
+        </ul>
+        <div className="note-section">
+          <h3>Notes:</h3>
+          <p>{note}</p>
         </div>
       </div>
-      <ul className="summary-items">
-        {checklistItems.map((item) => (
-          <li key={item.id} className={`summary-item ${item.completed ? 'completed' : ''}`}>
-            {item.title}
-          </li>
-        ))}
-      </ul>
-      <button onClick={() => navigate(-1)}>Back to Checklist</button>
+      <div className="button-container">
+        <button onClick={() => navigate('/')}>Back to Home</button>
+      </div>
     </div>
   );
-}
+};
 
-export default SummaryPage;
+export default TrainingSummary;

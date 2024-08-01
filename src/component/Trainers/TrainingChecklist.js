@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TrainingChecklist.css'; // Assuming the CSS file exists
 
-function TrainerChecklist({ trainerName }) {
+function TrainerChecklist() {
   const [checklistItems, setChecklistItems] = useState([
     { id: 1, title: '1. Security Checkpoint Training', completed: false },
     { id: 2, title: '2. Gate Identification & Navigation Training', completed: false },
@@ -12,6 +12,32 @@ function TrainerChecklist({ trainerName }) {
     { id: 6, title: '6. Working from the Lobby and Collecting Chairs', completed: false },
   ]);
 
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [trainerName, setTrainerName] = useState('');
+  const [traineeName, setTraineeName] = useState('');
+  const [note, setNote] = useState('');
+  const [noteSaved, setNoteSaved] = useState(false);
+  const [showNoteSection, setShowNoteSection] = useState(false); // State to control note section visibility
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedTrainerName = localStorage.getItem('trainerName');
+    const storedTraineeName = localStorage.getItem('traineeName');
+    const storedAuth = localStorage.getItem('isAuthenticated') === 'true';
+    const storedNote = localStorage.getItem('trainingNote') || ''; // Retrieve saved note
+
+    if (storedAuth && storedTrainerName && storedTraineeName) {
+      setIsAuthenticated(true);
+      setTrainerName(storedTrainerName);
+      setTraineeName(storedTraineeName);
+    } else {
+      navigate('/login');
+    }
+
+    setNote(storedNote); // Set the note from localStorage
+  }, [navigate]);
+
   const handleCheckboxChange = (id) => {
     setChecklistItems((prevItems) =>
       prevItems.map((item) =>
@@ -20,44 +46,101 @@ function TrainerChecklist({ trainerName }) {
     );
   };
 
-  const navigate = useNavigate();
+  const handleNoteChange = (e) => {
+    setNote(e.target.value);
+    setNoteSaved(false); // Mark note as not saved
+  };
 
-  const handleSeeSummaryClick = () => {
-    navigate('/summary', { state: { checklistItems } }); // Pass checklist items to summary page
+  const handleSaveNote = () => {
+    localStorage.setItem('trainingNote', note); // Save note to localStorage
+    setNoteSaved(true); // Mark note as saved
+  };
+
+  const handleSignOut = () => {
+    localStorage.removeItem('trainerName');
+    localStorage.removeItem('traineeName');
+    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('trainingNote'); // Remove note from localStorage
+    setIsAuthenticated(false);
+    navigate('/login');
   };
 
   return (
     <div className="trainer-checklist">
-      <p className="trainer-title">Welcome !!</p>
-      <p className="intro-text">
-        Please go through each task and check the boxes once you have observed or completed them with your trainees.
-      </p>
-      <table className="checklist-table">
-        <thead>
-          <tr>
-            <th>Task</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {checklistItems.map((item) => (
-            <tr key={item.id} className={item.completed ? 'completed' : ''}>
-              <td>{item.title}</td>
-              <td>
-                <input
-                  type="checkbox"
-                  checked={item.completed}
-                  onChange={() => handleCheckboxChange(item.id)}
-                />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="button-container">
-       
-        <button onClick={handleSeeSummaryClick}>See Progress</button>
-      </div>
+      {isAuthenticated ? (
+        <>
+          <div className="profile-table-container">
+            <table className="profile-table">
+              <thead>
+                <tr>
+                  <th>Profile</th>
+                  <th>Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Trainer</td>
+                  <td>{trainerName}</td>
+                </tr>
+                <tr>
+                  <td>Trainee</td>
+                  <td>{traineeName}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div className="button-container">
+              <button onClick={handleSignOut}>Sign Out</button>
+            </div>
+          </div>
+          <p className="intro-text">
+            Please go through each task and check the boxes once you have observed or completed them with your trainees.
+          </p>
+          <table className="checklist-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {checklistItems.map((item) => (
+                <tr key={item.id} className={item.completed ? 'completed' : ''}>
+                  <td>{item.title}</td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      checked={item.completed}
+                      onChange={() => handleCheckboxChange(item.id)}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="button-container">
+            <button onClick={() => setShowNoteSection(!showNoteSection)}>
+              {showNoteSection ? 'Hide Note' : 'Add Note'}
+            </button>
+          </div>
+          {showNoteSection && (
+            <div className="note-section">
+              <textarea
+                placeholder="Add a note about the training progress..."
+                value={note}
+                onChange={handleNoteChange}
+              />
+              <button onClick={handleSaveNote}>
+                {noteSaved ? 'Note Saved' : 'Save Note'}
+              </button>
+            </div>
+          )}
+          <div className="button-container">
+            <button onClick={() => navigate('/finish')}>Finish</button>
+          </div>
+        </>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 }

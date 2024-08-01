@@ -33,7 +33,7 @@ button:hover {
 }
 .interactive_heading h2 {
  
-  margin-top: 360px;
+  margin-top: 93px;
   font-size: 2rem;
 }
 
@@ -55,12 +55,6 @@ button:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
   z-index: 1000; /* Ensure the menu is above other content */
 }
-
-
-
-
-
-
 .menu-icon {
   position: fixed;
   top: 20px;

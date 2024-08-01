@@ -1,232 +1,133 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+/* General page styles */
+.trainer-checklist {
+  padding: 260px 20px 0; /* Padding at the top of the page */
+  font-family: Arial, sans-serif;
+  color: #0b0808; /* Dark text color */
+  background-color: whitesmoke; /* Light background color for better contrast */
 }
 
-.training-container {
-  min-height: 100vh; /* Ensures the container takes at least full viewport height */
-  display: flex;
-  flex-direction: column;
+/* Profile table styles */
+.profile-table-container {
+  margin-bottom: 20px;
 }
 
+.profile-table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #ffffff; /* White background for the table */
+}
 
+.profile-table th,
+.profile-table td {
+  border: 1px solid #dddddd; /* Light grey border */
+  padding: 12px;
+  text-align: left;
+}
 
-  .trainer-checklist {
-    padding: 20px; /* Added padding */
-    line-height: 1.6;
-    color: #333;
-    background-color: antiquewhite; /* Sets the background color to antiquewhite */
+.profile-table th {
+  background-color: #312407; /* Golden background for header */
+  color: #ffffff; /* White text for headers */
+}
 
-    padding-top: 400px;
-    box-sizing: border-box;
-    min-height: 1500px; /* Ensures the page height is at least 2000px */
-  }
-  
-  .trainer-title {
-    font-weight: bold;
-    font-size: 1.6rem;
-    color: rgb(6, 21, 44);
-    margin-bottom: 20px;
-  }
-  
-  .checklist-container {
-    margin-top: 20px;
-    padding: 15px;
+.profile-table td {
+  color: #333333; /* Dark text color for data */
+}
 
-    color: #fff;
-    border-radius: 8px;
-    max-height: 1500px; /* Adjust based on content needs */
-  }
-  
-  .checklist-items {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .checklist-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .checklist-item input[type="checkbox"] {
-    margin-right: -260px; /* Sets the gap between checkbox and text to 30px */
-  }
-  
-  .checklist-item p {
-    margin: 0;
+.profile-table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light grey background for even rows */
+}
 
-  }
-  
-  .summary {
-    margin-top: 30px;
-    padding: 20px;
-    border-top: 1px solid #ccc;
-  }
-  
-  .summary-title {
-    font-weight: bold;
-    font-size: 1.4rem;
-    color: rgb(6, 21, 44);
-  }
-  
-  .summary p {
-    margin: 10px 0;
-  }
-  
-  .button-container {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
+/* Checklist table styles */
+.checklist-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
 
-  
-  .button-container button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(6, 21, 44);
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button-container button:hover {
-    background-color: rgb(5, 15, 30);
-  }
-  .trainer-checklist li {
- 
-    margin-bottom: 8px;
-  }
-    .item{
-width: 150px;
-align-items: center;
-    }
-    .summary-title.complete {
-        color: green; /* Color when all items are completed */
-      }
-      
-      .summary-text.complete {
-        color: green; /* Color when all items are completed */
-      }
-  
-.progress-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .CircularProgressbar {
-    width: 100px; /* Adjust size as needed */
-    height: 100px;
-  }
-  .progress-container {
-    background: linear-gradient(135deg, #9ccae0 33%, #bde8f9 66%, #b0ede5 75%);
-    border-radius: 8px;
-    height: 25px;
-    width: 100%;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  
-  
-  .linear-progress-bar {
-    height: 100%;
-    transition: width 0.5s ease;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-  }
-  @media (min-width:1200px) {
-    .trainer-checklist {
-      padding: 20px; /* Added padding */
-      line-height: 1.6;
-      color: #333;
-      background-color: antiquewhite; /* Sets the background color to antiquewhite */
- 
-      padding-top: 400px;
-      box-sizing: border-box;
-      min-height: 1500px; /* Ensures the page height is at least 2000px */
-    }
-    .checklist-item input[type="checkbox"] {
-      margin-right: -60px; /* Sets the gap between checkbox and text to 30px */
-   height: 42px;
-    }
-    
-  }
-  .checklist-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color:rgba(183, 182, 182, 0.783);
-  }
-  
-  .checklist-table th,
-  .checklist-table td {
-    padding: 8px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .checklist-table thead {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .checklist-table th {
-    font-size: 1.1rem;
-  }
-  
-  .checklist-table tbody tr {
-    transition: background-color 0.3s ease;
-  }
-  
-  .checklist-table tbody tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .checklist-table tbody .completed {
-    background-color: #d4edda; /* Light green background for completed tasks */
-  }
-  
-  .checklist-table input[type="checkbox"] {
-    cursor: pointer;
-  }
-  
-  /* Button container styling */
-  .button-container {
-    text-align: center;
-  }
-  
-  .button-container p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
+.checklist-table th,
+.checklist-table td {
+  border: 1px solid #dddddd; /* Light grey border */
+  padding: 12px;
+  text-align: left;
+}
 
-  
-  .button-container button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
-  
-  .button-container button:active {
-    transform: scale(0.98);
-  }
-  .button-container button{
-    margin: 10px auto;
-  }
+.checklist-table th {
+  background-color: #2e230c; /* Golden background for header */
+  color: #ffffff; /* White text for headers */
+}
+
+.checklist-table td {
+  color: #333333; /* Dark text color for data */
+}
+
+.checklist-table tr:nth-child(odd) {
+  background-color: #ffffff; /* White background for odd rows */
+}
+
+.checklist-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Slightly lighter background for even rows */
+}
+
+.checklist-table input[type="checkbox"] {
+  accent-color: #f7b731; /* Golden color for unchecked checkboxes */
+}
+
+.checklist-table input[type="checkbox"]:checked {
+  accent-color: #4CAF50; /* Green color for checked checkboxes */
+}
+
+/* Additional styles */
+.completed {
+  background-color: #e6ffe6; /* Light green background for completed items */
+}
+
+.intro-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #f7b731; /* Golden color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #62511e; /* Darker golden color on hover */
+}
+
+button:focus {
+  outline: none;
+}
+
+.note-section {
+  margin-top: 20px;
+  width: 90%;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+textarea:focus {
+  border-color: #f7b731; /* Highlight border color for textarea */
+}
+.trainer-checklist button{
+  background-color: goldenrod;
+}

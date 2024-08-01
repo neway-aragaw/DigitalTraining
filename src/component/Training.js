@@ -38,9 +38,8 @@ function Training() {
         <ul>
           <li><Link to="/directory"><FontAwesomeIcon icon={faSearch} /> Quick Directory</Link></li>
           <li><Link to="/contact"><FontAwesomeIcon icon={faPhoneAlt} /> Contact</Link></li>
-          <li><Link to="/trainers"><FontAwesomeIcon icon={faChalkboardTeacher} /> For Trainers</Link></li>
+          <li><Link to="/login"><FontAwesomeIcon icon={faChalkboardTeacher} /> For Trainers</Link></li>
           <li><Link to="/about"><FontAwesomeIcon icon={faInfoCircle} /> About</Link></li>
-          <li><a href="#" onClick={handleInternationalClick}><FontAwesomeIcon icon={faGlobe} /> International</a></li>
         </ul>
       </div>
 
@@ -49,9 +48,8 @@ function Training() {
         <ul>
           <li><Link to="/directory"><FontAwesomeIcon icon={faSearch} /> Quick Directory</Link></li>
           <li><Link to="/contact"><FontAwesomeIcon icon={faPhoneAlt} /> Contact</Link></li>
-          <li><Link to="/trainers"><FontAwesomeIcon icon={faChalkboardTeacher} /> For Trainers</Link></li>
+          <li><Link to="/login"><FontAwesomeIcon icon={faChalkboardTeacher} /> For Trainers</Link></li>
           <li><Link to="/about"><FontAwesomeIcon icon={faInfoCircle} /> About</Link></li>
-          <li><a href="#" onClick={handleInternationalClick}><FontAwesomeIcon icon={faGlobe} /> International</a></li>
         </ul>
       </div>
 
